@@ -5,12 +5,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Auto extends Helper{
-
-    @Override
-    public void setUp() {
-        super.setUp();
-    }
-
     @Test
     public void loginTest() {
         driver.get("https://zoom.us/");
@@ -25,9 +19,4 @@ public class Auto extends Helper{
         WebDriverWait wait = new WebDriverWait(driver,5);
         wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("sidemenu"))));
         }
-
-    @Override
-    public void closeBrowser() {
-        super.closeBrowser();
-    }
 }
