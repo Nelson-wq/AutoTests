@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Helper {
+public class SetUp_before_after {
     public WebDriver driver;
     @Before
     public void setUp() {
