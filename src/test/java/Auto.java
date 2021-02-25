@@ -11,7 +11,7 @@ public  class Auto {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+     //   System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
