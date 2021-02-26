@@ -1,13 +1,15 @@
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginTest extends BasePage{
 
     @Test
-    public void loginTest() {
+    public void loginTest(){
+
         driver.get("https://www.flyuia.com/ua/ru/home");
         WebElement account = driver.findElement(By.xpath("//*[@id=\"obe-user-login-widget\"]/app-sign-in-root/div/div/button"));
         account.click();
