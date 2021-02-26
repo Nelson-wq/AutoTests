@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
     public WebDriver driver;
     public WebDriverWait wait;
+
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "/src/main/resources/seleniumDriver/chromedriver.exe");
@@ -14,6 +15,7 @@ public class BasePage {
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver,5);
     }
+
     @After
     public void closeBrowser() {
         driver.quit();
