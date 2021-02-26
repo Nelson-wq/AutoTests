@@ -1,6 +1,6 @@
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class LoginPage {
     private WebDriver driver;
@@ -9,13 +9,35 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public LoginPage typeEmail(String email){
-        driver.findElement(By.name("email")).sendKeys(email);
+    By accountButtonClickLocator = By.xpath("//*[@id=\"obe-user-login-widget\"]/app-sign-in-root/div/div/button");
+    By emailLocator = By.name("email");
+    By passwordLocator = By.name("password");
+    By buttonForLoginLocator = By.className("form--buttons");
+    By assertSuccessfulLoginLocator = By.xpath("//*[@id=\"obe-user-login-widget\"]/app-sign-in-root/div/div/button/i[2]");
+
+    public LoginPage accountButtonClick(){
+        driver.findElement(accountButtonClickLocator).click();
         return this;
     }
 
-    public LoginPage typePassword(String password){
-        driver.findElement(By.name("password")).sendKeys(password);
+    public LoginPage fillEmail(String email){
+        driver.findElement(emailLocator).sendKeys(email);
         return this;
     }
+
+    public LoginPage fillPassword(String password){
+        driver.findElement(passwordLocator).sendKeys(password);
+        return this;
+    }
+
+    public LoginPage buttonForLogin(){
+        driver.findElement(buttonForLoginLocator).click();
+        return this;
+    }
+
+    public LoginPage assertSuccessfulLogin(){
+        Assert.assertTrue(driver.findElement(assertSuccessfulLoginLocator).isDisplayed());
+        return this;
+    }
+
 }
