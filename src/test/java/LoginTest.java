@@ -3,6 +3,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginTest extends BasePage{
@@ -15,11 +16,12 @@ public class LoginTest extends BasePage{
         account.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated((By.name("email"))));
-        WebElement email = driver.findElement(By.name("email"));
-        email.sendKeys("wecifa4707@geeky83.com");
 
-        WebElement password = driver.findElement(By.name("password"));
-        password.sendKeys("Autotest0%");
+        LoginPage page = PageFactory.initElements(driver, LoginPage.class);
+
+        page.typeEmail("wecifa4707@geeky83.com");
+
+        page.typePassword("Autotest0%");
 
         WebElement button = driver.findElement(By.className("form--buttons"));
         button.click();
